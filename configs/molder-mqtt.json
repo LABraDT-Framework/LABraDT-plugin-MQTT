@@ -1,0 +1,119 @@
+{
+  "machineId": "molder-mqtt",
+  "machineType": "InjectionMolder",
+  "protocol": "MQTT",
+  "comment": "Same machine type as molder-1, but speaking MQTT — sourceAddress is a topic, payload is a JSON envelope. Proves the gateway is protocol-agnostic.",
+  "connection": {
+    "endpoint": "tcp://localhost:1883",
+    "quietWindowMs": 5000
+  },
+  "mappings": [
+    {
+      "sourceAddress": "factory/molder-mqtt/MachineState",
+      "idShort": "MachineState",
+      "valueType": "xs:string",
+      "unit": ""
+    },
+    {
+      "sourceAddress": "factory/molder-mqtt/BarrelTemperatureZone1",
+      "idShort": "BarrelTemperatureZone1",
+      "valueType": "xs:double",
+      "unit": "°C",
+      "validRange": [
+        0,
+        350
+      ],
+      "deadband": 1.0
+    },
+    {
+      "sourceAddress": "factory/molder-mqtt/BarrelTemperatureZone2",
+      "idShort": "BarrelTemperatureZone2",
+      "valueType": "xs:double",
+      "unit": "°C",
+      "validRange": [
+        0,
+        350
+      ],
+      "deadband": 1.0
+    },
+    {
+      "sourceAddress": "factory/molder-mqtt/MoldTemperature",
+      "idShort": "MoldTemperature",
+      "valueType": "xs:double",
+      "unit": "°C",
+      "validRange": [
+        0,
+        150
+      ],
+      "deadband": 0.5
+    },
+    {
+      "sourceAddress": "factory/molder-mqtt/InjectionPressure",
+      "idShort": "InjectionPressure",
+      "valueType": "xs:double",
+      "unit": "bar",
+      "validRange": [
+        0,
+        2500
+      ],
+      "deadband": 5.0
+    },
+    {
+      "sourceAddress": "factory/molder-mqtt/ClampForce",
+      "idShort": "ClampForce",
+      "valueType": "xs:double",
+      "unit": "kN",
+      "validRange": [
+        0,
+        5000
+      ],
+      "deadband": 10.0
+    },
+    {
+      "sourceAddress": "factory/molder-mqtt/CycleTime",
+      "idShort": "CycleTime",
+      "valueType": "xs:double",
+      "unit": "s",
+      "validRange": [
+        0,
+        300
+      ],
+      "deadband": 0.1
+    },
+    {
+      "sourceAddress": "factory/molder-mqtt/ShotCount",
+      "idShort": "ShotCount",
+      "valueType": "xs:int",
+      "unit": ""
+    },
+    {
+      "sourceAddress": "factory/molder-mqtt/MaterialType",
+      "idShort": "MaterialType",
+      "valueType": "xs:string",
+      "category": "CONSTANT",
+      "unit": ""
+    },
+    {
+      "sourceAddress": "factory/molder-mqtt/PlasticizingTime",
+      "idShort": "PlasticizingTime",
+      "valueType": "xs:double",
+      "unit": "s",
+      "validRange": [
+        0,
+        60
+      ],
+      "deadband": 0.05
+    },
+    {
+      "sourceAddress": "factory/molder-mqtt/ScrewPosition",
+      "idShort": "ScrewPosition",
+      "valueType": "xs:double",
+      "unit": "mm",
+      "validRange": [
+        0,
+        400
+      ],
+      "deadband": 0.2
+    }
+  ]
+}
