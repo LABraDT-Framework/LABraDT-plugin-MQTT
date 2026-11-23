@@ -4,9 +4,6 @@ MQTT protocol plugin for the LABraDT gateway: an MQTT client (Eclipse Paho) with
 quiet-window liveness, and the translator that turns the JSON envelope (or a bare value)
 into AAS Properties.
 
-**Internal ISW project. Do not publish.** The protocol plugins are moved out of the gateway
-project, so that the public LABraDT release ships the core and the plugin API only.
-
 ## What is in here
 
 | Path | What it is |
